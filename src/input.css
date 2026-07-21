@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.charcoal');
+  }
+
+  /* The nav is fixed at 80px tall — without this, in-page anchor targets land
+     underneath it and the section heading is hidden. */
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* --- Static three-phone hero fan --- */
+  .hero-phones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    /* The side phones are rotated, so their bounding boxes extend past the flex
+       container and pushed the whole document into horizontal scroll on narrow
+       screens. Clip here rather than on <body>, which would break the sticky nav
+       and scroll-margin-top on anchor targets. */
+    overflow-x: clip;
+  }
+
+  .hero-phones img {
+    display: block;
+    height: auto;
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.18));
+    will-change: transform;
+  }
+
+  /* Side phones: slightly smaller, tilted, sit lower and behind the centre */
+  .hero-phones .phone-side {
+    width: 190px;
+    z-index: 1;
+  }
+
+  .hero-phones .phone-left {
+    animation: floatLeft 7s ease-in-out infinite;
+  }
+
+  .hero-phones .phone-right {
+    animation: floatRight 7s ease-in-out 0.9s infinite;
+  }
+
+  /* Centre phone: largest, upright, sits highest and in front */
+  .hero-phones .phone-center {
+    width: 230px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.22));
+    animation: floatCenter 6s ease-in-out 0.45s infinite;
+  }
+
+  /* Larger fan on tablet / desktop */
+  @media (min-width: 768px) {
+    .hero-phones {
+      gap: 36px;
+    }
+    .hero-phones .phone-side {
+      width: 260px;
+    }
+    .hero-phones .phone-center {
+      width: 310px;
+    }
+  }
+
+  /* Very narrow screens: shrink the phones and ease the tilt / overlap */
+  @media (max-width: 420px) {
+    .hero-phones {
+      gap: 8px;
+    }
+    .hero-phones .phone-side {
+      width: 130px;
+    }
+    .hero-phones .phone-center {
+      width: 168px;
+    }
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-phones .phone-left {
+      animation: none;
+      transform: translateY(40px) rotate(-16deg);
+    }
+    .hero-phones .phone-right {
+      animation: none;
+      transform: translateY(40px) rotate(16deg);
+    }
+    .hero-phones .phone-center {
+      animation: none;
+      transform: none;
+    }
+  }
+}
+
+/* Gentle, staggered vertical drift. Rotation is baked into each keyframe so the
+   tilt is preserved while the phone floats. translateY precedes rotate so the
+   drift stays truly vertical. */
+@keyframes floatLeft {
+  0%,
+  100% {
+    transform: translateY(40px) rotate(-16deg);
+  }
+  50% {
+    transform: translateY(30px) rotate(-16deg);
+  }
+}
+
+@keyframes floatRight {
+  0%,
+  100% {
+    transform: translateY(40px) rotate(16deg);
+  }
+  50% {
+    transform: translateY(32px) rotate(16deg);
+  }
+}
+
+@keyframes floatCenter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@media (max-width: 420px) {
+  @keyframes floatLeft {
+    0%,
+    100% {
+      transform: translateY(26px) rotate(-13deg);
+    }
+    50% {
+      transform: translateY(18px) rotate(-13deg);
+    }
+  }
+  @keyframes floatRight {
+    0%,
+    100% {
+      transform: translateY(26px) rotate(13deg);
+    }
+    50% {
+      transform: translateY(19px) rotate(13deg);
+    }
+  }
+}

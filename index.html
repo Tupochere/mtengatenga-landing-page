@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mtengatenga Museum AR Experience</title>
+<meta name="description" content="Scan real museum artifacts with your Android phone to unlock AR stories, 3D models, and an AI guide. A student demo project preserving Malawi's cultural heritage."/>
+
+<!-- Open Graph — controls the preview card when this link is shared on LinkedIn,
+     WhatsApp, etc. NOTE: LinkedIn and most scrapers require an ABSOLUTE og:image
+     URL. Once the Vercel domain is known, change og:image (and add og:url) to the
+     full https:// address, otherwise the share card will render without an image. -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Mtengatenga Museum AR Experience"/>
+<meta property="og:description" content="Scan real museum artifacts with your Android phone to unlock AR stories, 3D models, and an AI guide."/>
+<meta property="og:image" content="assets/mock-2.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="dist/styles.css" rel="stylesheet"/>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto left-1/2 -translate-x-1/2">
+<a class="flex items-center gap-2" href="#top">
+<span class="material-symbols-outlined text-charcoal" data-icon="museum" data-weight="fill" style="font-variation-settings: 'FILL' 1;">museum</span>
+<span class="font-headline-md text-headline-md font-bold text-charcoal">AR Museum</span>
+</a>
+<div class="flex gap-4 items-center">
+<!-- GitHub is hidden on the narrowest screens so the two pills don't overflow the
+     bar; it remains reachable from the Tech Stack section and the footer. -->
+<a class="hidden sm:inline-flex font-label-md text-label-md text-charcoal border border-gray-200 px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors" href="https://github.com/Tupochere/mtengatenga-landing-page" target="_blank" rel="noreferrer">GitHub</a>
+<a class="font-label-md text-label-md bg-terracotta text-white px-4 sm:px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap" href="https://github.com/Tupochere/Museum-App-UI/releases/latest/download/mtengatenga-ar.apk">Download APK</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[80px]" id="top">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-section-gap pb-12 flex flex-col items-center text-center">
+<h1 class="font-headline-xl text-headline-lg-mobile sm:text-headline-lg md:text-headline-xl text-charcoal mb-6 max-w-4xl">Mtengatenga Museum AR Experience</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">Scan real museum artifacts with your Android phone to unlock AR stories, 3D models, and an AI guide.</p>
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<a class="bg-terracotta text-white font-label-md text-label-md px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm" href="#downloads">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                    Try the App
+                </a>
+<a class="bg-white border border-gray-200 text-charcoal font-label-md text-label-md px-8 py-3.5 rounded-full hover:bg-gray-50 transition-colors flex items-center gap-2 shadow-sm" href="#demo">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                    Watch Demo
+                </a>
+</div>
+<!-- Hero Phone Arc -->
+<div class="hero-phones w-full">
+<img class="phone-side phone-left" src="assets/mock-1.webp" width="620" height="1262" alt="Indoor navigation screen showing a route through the museum floor plan" fetchpriority="high" decoding="async"/>
+<img class="phone-center" src="assets/mock-2.webp" width="620" height="1252" alt="AI guide screen answering a visitor question about Chewa traditions" fetchpriority="high" decoding="async"/>
+<img class="phone-side phone-right" src="assets/mock-3.webp" width="620" height="1252" alt="Interactive 3D preview of the Khulubvi artifact, rotatable on screen" fetchpriority="high" decoding="async"/>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-section-gap bg-gray-50/50">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-charcoal text-center mb-12">Discover Hidden Heritage</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Feature 1 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6 text-charcoal border border-gray-100">
+<span class="material-symbols-outlined text-3xl" data-icon="qr_code_scanner" data-weight="fill" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Instantly access detailed historical context, stories, and multimedia content simply by scanning QR codes placed next to physical artifacts in the museum.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6 text-charcoal border border-gray-100">
+<span class="material-symbols-outlined text-3xl" data-icon="view_in_ar" data-weight="fill" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Interact with highly detailed, photogrammetry-scanned 3D models of artifacts, allowing you to examine intricate details from every angle right on your device.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6 text-charcoal border border-gray-100">
+<span class="material-symbols-outlined text-3xl" data-icon="smart_toy" data-weight="fill" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Converse with our intelligent AI museum guide. Ask specific questions about artifacts, culture, and history, receiving contextual and knowledgeable answers.</p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6 text-charcoal border border-gray-100">
+<span class="material-symbols-outlined text-3xl" data-icon="admin_panel_settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">A dedicated Admin Portal for museum curators to manage artifact data, upload new 3D models, update descriptions, and generate QR codes seamlessly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Try It Yourself -->
+<section class="bg-white border-y border-gray-100 py-section-gap" id="downloads">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-4">Try the Experience Yourself</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Get started in three simple steps. Download the app, print the test codes, and start exploring.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm flex flex-col">
+<div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mx-auto mb-6 text-xl font-bold font-headline-md text-charcoal">1</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-4">Download the APK</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Get the latest Android build directly to your device.</p>
+<a class="bg-terracotta text-white font-label-md text-label-md px-6 py-3 rounded-full hover:opacity-90 transition-opacity inline-flex items-center gap-2 shadow-sm w-full justify-center" href="https://github.com/Tupochere/Museum-App-UI/releases/latest/download/mtengatenga-ar.apk">
+<span class="material-symbols-outlined" data-icon="android">android</span>
+                            Android APK (Sideload)
+                        </a>
+</div>
+<!-- Step 2 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm flex flex-col">
+<div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mx-auto mb-6 text-xl font-bold font-headline-md text-charcoal">2</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-4">Get the QR Test Pack</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Download and print the test QR codes to use at home.</p>
+<a class="bg-white border border-gray-200 text-charcoal font-label-md text-label-md px-6 py-3 rounded-full hover:bg-gray-50 transition-colors inline-flex items-center gap-2 shadow-sm w-full justify-center" href="https://github.com/Tupochere/Museum-Landing-page-Demo/releases/latest/download/mtengatenga-qr-test-pack.zip">
+<span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+                            QR Test Pack (.zip)
+                        </a>
+</div>
+<!-- Step 3 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm flex flex-col">
+<div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center mx-auto mb-6 text-xl font-bold font-headline-md text-charcoal">3</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-4">Install &amp; Scan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">Sideload the app, grant camera permissions, and scan away.</p>
+<a class="bg-white border border-gray-200 text-charcoal font-label-md text-label-md px-6 py-3 rounded-full hover:bg-gray-50 transition-colors inline-flex items-center gap-2 shadow-sm w-full justify-center" href="#install">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                            View Install Guide
+                        </a>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mt-10 max-w-2xl mx-auto">
+                    This is a student demo build, distributed as a direct APK download &mdash; it is not published on Google Play. Android only.
+                </p>
+</div>
+</section>
+<!-- The Story Section -->
+<section class="bg-white py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative max-w-md mx-auto w-full">
+<div class="absolute inset-0 bg-gray-50 rounded-[2rem] transform -rotate-2 scale-105 -z-10"></div>
+<img alt="The app displaying an artifact preview with historical context" class="w-full h-auto rounded-[2rem] shadow-xl border border-gray-100 object-cover aspect-[9/19] block" src="assets/artifact-preview.webp" width="253" height="512" loading="lazy" decoding="async"/>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-6">Preserving Malawi's Hidden Heritage</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        The Mtengatenga Museum holds incredible stories within its artifacts, but much of this history remains hidden behind static display cases. Our project aims to change that.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        By leveraging Augmented Reality (AR) and Artificial Intelligence, we are bringing these historical artifacts to life. We scan physical artifacts to unlock rich, interactive stories, detailed 3D models, and provide a personalized AI guide for every visitor.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        This digital preservation not only enhances the museum experience but ensures that Malawi's cultural heritage is accessible and engaging for future generations.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Demo Video -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap text-center" id="demo">
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-8">See it in Action</h2>
+<div class="relative w-full max-w-4xl mx-auto aspect-video rounded-[2rem] overflow-hidden border border-gray-100 bg-gray-50 shadow-md" id="video-frame">
+<img class="w-full h-full object-cover" alt="A person using a smartphone to view an artifact in a museum gallery" src="assets/demo-poster.webp" width="512" height="286" loading="lazy" decoding="async"/>
+<div class="absolute inset-0 bg-black/10 z-10" id="video-scrim"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center z-20 gap-4" id="video-overlay">
+<div class="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal shadow-lg border border-gray-100">
+<span class="material-symbols-outlined text-4xl ml-1" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="font-label-md text-label-md bg-white/90 backdrop-blur-sm text-charcoal px-4 py-2 rounded-full shadow-sm border border-gray-100" id="video-badge">Demo video coming soon</span>
+</div>
+</div>
+</section>
+<!-- How It Works / Install Guide -->
+<section class="bg-gray-50/50 py-section-gap border-y border-gray-100" id="install">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-charcoal text-center mb-16">How It Works</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative mb-16">
+<div class="hidden md:block absolute top-8 left-0 w-full h-px bg-gray-200 -z-10"></div>
+<div class="text-center relative">
+<div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center mb-6 z-10 text-charcoal font-headline-md font-bold shadow-sm">1</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-2">Download App</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Get the APK and QR Test Pack.</p>
+</div>
+<div class="text-center relative">
+<div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center mb-6 z-10 text-charcoal font-headline-md font-bold shadow-sm">2</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-2">Enable Install</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Allow installs from unknown sources.</p>
+</div>
+<div class="text-center relative">
+<div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center mb-6 z-10 text-charcoal font-headline-md font-bold shadow-sm">3</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-2">Scan Artifact</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Point your camera at a test QR code.</p>
+</div>
+<div class="text-center relative">
+<div class="w-16 h-16 mx-auto bg-white border border-gray-200 rounded-full flex items-center justify-center mb-6 z-10 text-charcoal font-headline-md font-bold shadow-sm">4</div>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-2">Explore AR</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Experience 3D models and stories.</p>
+</div>
+</div>
+<!-- Detailed sideloading instructions -->
+<div class="max-w-3xl mx-auto bg-white border border-gray-100 rounded-2xl p-8 md:p-10 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-charcoal mb-6">Installing the APK, step by step</h3>
+<ol class="space-y-6">
+<li class="flex gap-4">
+<span class="shrink-0 w-7 h-7 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center font-label-sm text-label-sm text-charcoal">1</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-left">Tap <strong class="text-charcoal">Android APK (Sideload)</strong> above. Your browser will warn that this type of file can harm your device &mdash; that warning appears for every APK downloaded outside the Play Store. Choose <strong class="text-charcoal">Download anyway</strong>.</p>
+</li>
+<li class="flex gap-4">
+<span class="shrink-0 w-7 h-7 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center font-label-sm text-label-sm text-charcoal">2</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-left">Open the downloaded file. Android will ask you to allow installs from this source. Go to <strong class="text-charcoal">Settings &rsaquo; Apps &rsaquo; Special access &rsaquo; Install unknown apps</strong>, pick the browser you downloaded with, and turn on <strong class="text-charcoal">Allow from this source</strong>.</p>
+</li>
+<li class="flex gap-4">
+<span class="shrink-0 w-7 h-7 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center font-label-sm text-label-sm text-charcoal">3</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-left">Play Protect may show <em>&ldquo;Unsafe app blocked&rdquo;</em>. This is because the build is not signed by a Play-registered developer, not because anything was detected in it. Tap <strong class="text-charcoal">More details &rsaquo; Install anyway</strong> to continue.</p>
+</li>
+<li class="flex gap-4">
+<span class="shrink-0 w-7 h-7 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center font-label-sm text-label-sm text-charcoal">4</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-left">Launch the app and grant <strong class="text-charcoal">camera access</strong> when prompted &mdash; the scanner cannot work without it. The app requests no other permissions.</p>
+</li>
+<li class="flex gap-4">
+<span class="shrink-0 w-7 h-7 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center font-label-sm text-label-sm text-charcoal">5</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-left">Unzip the QR Test Pack and print the codes, or just display them on a second screen. Point the app's scanner at one to load that artifact.</p>
+</li>
+</ol>
+<div class="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-4 sm:gap-8">
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-charcoal">Requires</strong><br/>Android 8.0 or newer, with a rear camera. ARCore-capable device recommended for 3D models.</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-charcoal">Not on Google Play</strong><br/>This is a final-year student project distributed for demonstration and review only.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Admin Portal -->
+<section class="bg-white py-section-gap" id="admin">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto bg-white border border-gray-100 rounded-2xl p-8 md:p-12 shadow-sm text-center">
+<div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6 text-charcoal border border-gray-100 mx-auto">
+<span class="material-symbols-outlined text-3xl" data-icon="admin_panel_settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-4">Explore the Admin Portal</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto">The curator-facing side of the project. Manage artifact records, upload 3D models, write descriptions, and generate the QR codes the app scans &mdash; all from the browser.</p>
+<!-- TODO: paste the live Admin Portal URL into ADMIN_PORTAL_URL in the script at the
+     bottom of this file. Until it is set, this renders as a disabled "coming soon"
+     button rather than a dead link. -->
+<span class="bg-gray-100 text-on-surface-variant font-label-md text-label-md px-8 py-3.5 rounded-full inline-flex items-center gap-2 cursor-not-allowed" id="admin-cta" aria-disabled="true">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+                        Admin Portal link coming soon
+                    </span>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap bg-gray-50/50 border-t border-gray-100">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-charcoal text-center mb-12">Common Questions</h2>
+<div class="space-y-4">
+<div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Is it free?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Yes, it's a student demo project and completely free to try.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Does it work on iOS?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Currently, the application is Android-only.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Can I use it at home?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Yes, you can download the QR Test Pack, print the codes, and scan them anywhere to experience the AR features.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Why does my phone warn me about the app?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Because it is installed directly rather than through the Play Store. Android shows that warning for any sideloaded app. See the <a class="text-terracotta underline hover:opacity-80" href="#install">install guide</a> for what to expect.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Section -->
+<section class="py-section-gap bg-white border-t border-gray-100">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg text-charcoal mb-8">Built With Modern Tech</h2>
+<div class="flex flex-wrap justify-center gap-8 items-center mb-10 text-on-surface-variant font-headline-md text-headline-md">
+<span>Flutter</span>
+<span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+<span>ARCore</span>
+<span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+<span>Supabase</span>
+<span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+<span>React</span>
+</div>
+<a class="inline-flex items-center gap-2 text-charcoal font-label-md text-label-md bg-white border border-gray-200 px-6 py-3 rounded-full hover:bg-gray-50 transition-colors shadow-sm" href="https://github.com/Tupochere/mtengatenga-landing-page" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+                    View Source on GitHub
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6 border-t border-gray-100 max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+<span class="font-headline-md text-headline-md text-charcoal">AR Museum</span>
+<span class="hidden md:block w-1.5 h-1.5 rounded-full bg-gray-200"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">&copy; 2026 Mtengatenga Museum AR. A student project.</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-6">
+<!-- Hidden until LINKEDIN_URL is set in the script below, so it never renders
+     as a label pointing at the wrong destination. -->
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-charcoal transition-colors hidden" target="_blank" rel="noreferrer" id="footer-linkedin">LinkedIn</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-charcoal transition-colors" href="https://github.com/Tupochere/mtengatenga-landing-page" target="_blank" rel="noreferrer">GitHub Repo</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-charcoal transition-colors" href="https://github.com/Tupochere/mtengatenga-landing-page#readme" target="_blank" rel="noreferrer">Documentation</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-charcoal transition-colors" href="#install">Install Guide</a>
+</div>
+</footer>
+
+<script>
+  // ---------------------------------------------------------------------------
+  // The only three values that need editing as the project's assets come online.
+  // Each one degrades to an honest "coming soon" state while it is null, rather
+  // than shipping a link that goes nowhere.
+  // ---------------------------------------------------------------------------
+
+  /** YouTube video ID only, e.g. 'dQw4w9WgXcQ' — not the full URL. */
+  var YOUTUBE_ID = null;
+
+  /** Full https:// URL of the deployed Admin Portal. */
+  var ADMIN_PORTAL_URL = null;
+
+  /** Full https:// URL of your LinkedIn profile. */
+  var LINKEDIN_URL = null;
+
+  // --- Demo video: click-to-load facade ---------------------------------------
+  // Loading the YouTube player eagerly costs ~1MB before anyone presses play, so
+  // the poster stands in until it is clicked.
+  (function setUpVideo() {
+    if (!YOUTUBE_ID) return;
+
+    var frame = document.getElementById('video-frame');
+    var overlay = document.getElementById('video-overlay');
+    var badge = document.getElementById('video-badge');
+
+    badge.remove();
+    frame.classList.add('group', 'cursor-pointer', 'hover:shadow-lg', 'transition-shadow');
+    frame.setAttribute('role', 'button');
+    frame.setAttribute('tabindex', '0');
+    frame.setAttribute('aria-label', 'Play the Mtengatenga Museum AR demo video');
+
+    function play() {
+      var iframe = document.createElement('iframe');
+      iframe.src =
+        'https://www.youtube-nocookie.com/embed/' + YOUTUBE_ID + '?autoplay=1&rel=0';
+      iframe.title = 'Mtengatenga Museum AR Experience — demo video';
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.className = 'absolute inset-0 w-full h-full';
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+    }
+
+    frame.addEventListener('click', play);
+    frame.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        play();
+      }
+    });
+    overlay.addEventListener('click', play);
+  })();
+
+  // --- Admin Portal CTA -------------------------------------------------------
+  (function setUpAdminCta() {
+    if (!ADMIN_PORTAL_URL) return;
+
+    var placeholder = document.getElementById('admin-cta');
+    var link = document.createElement('a');
+    link.href = ADMIN_PORTAL_URL;
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.className =
+      'bg-terracotta text-white font-label-md text-label-md px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity inline-flex items-center gap-2 shadow-sm';
+    link.innerHTML =
+      '<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span> Open Admin Portal';
+    placeholder.replaceWith(link);
+  })();
+
+  // --- Footer LinkedIn --------------------------------------------------------
+  (function setUpLinkedIn() {
+    var el = document.getElementById('footer-linkedin');
+    if (!LINKEDIN_URL) return;
+    el.href = LINKEDIN_URL;
+    el.classList.remove('hidden');
+  })();
+</script>
+</body>
+</html>
