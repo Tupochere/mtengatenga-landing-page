@@ -46,9 +46,22 @@
     will-change: transform;
   }
 
-  /* Side phones: slightly smaller, tilted, sit lower and behind the centre */
+  /* Centre phone: the hero device, shown at every screen size. It scales with the
+     viewport on small screens so it is never wider than the content column. */
+  .hero-phones .phone-center {
+    width: min(240px, 62vw);
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.22));
+    animation: floatCenter 6s ease-in-out 0.45s infinite;
+  }
+
+  /* Side phones: tilted and set behind the centre. Hidden on phones — three
+     rotated phones cannot fit a narrow column without slicing through the
+     artwork — and fanned out only once the layout is wide enough to show each
+     one whole. */
   .hero-phones .phone-side {
-    width: 190px;
+    display: none;
     z-index: 1;
   }
 
@@ -60,17 +73,22 @@
     animation: floatRight 7s ease-in-out 0.9s infinite;
   }
 
-  /* Centre phone: largest, upright, sits highest and in front */
-  .hero-phones .phone-center {
-    width: 230px;
-    position: relative;
-    z-index: 2;
-    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.22));
-    animation: floatCenter 6s ease-in-out 0.45s infinite;
+  /* Tablet: the fan appears, sized to sit fully inside the content column. */
+  @media (min-width: 768px) {
+    .hero-phones {
+      gap: 24px;
+    }
+    .hero-phones .phone-side {
+      display: block;
+      width: 190px;
+    }
+    .hero-phones .phone-center {
+      width: 230px;
+    }
   }
 
-  /* Larger fan on tablet / desktop */
-  @media (min-width: 768px) {
+  /* Desktop: larger fan with a wider spread. */
+  @media (min-width: 1024px) {
     .hero-phones {
       gap: 36px;
     }
@@ -79,19 +97,6 @@
     }
     .hero-phones .phone-center {
       width: 310px;
-    }
-  }
-
-  /* Very narrow screens: shrink the phones and ease the tilt / overlap */
-  @media (max-width: 420px) {
-    .hero-phones {
-      gap: 8px;
-    }
-    .hero-phones .phone-side {
-      width: 130px;
-    }
-    .hero-phones .phone-center {
-      width: 168px;
     }
   }
 
@@ -142,26 +147,5 @@
   }
   50% {
     transform: translateY(-9px);
-  }
-}
-
-@media (max-width: 420px) {
-  @keyframes floatLeft {
-    0%,
-    100% {
-      transform: translateY(26px) rotate(-13deg);
-    }
-    50% {
-      transform: translateY(18px) rotate(-13deg);
-    }
-  }
-  @keyframes floatRight {
-    0%,
-    100% {
-      transform: translateY(26px) rotate(13deg);
-    }
-    50% {
-      transform: translateY(19px) rotate(13deg);
-    }
   }
 }

@@ -27,15 +27,15 @@
 <body class="antialiased min-h-screen flex flex-col font-body-md">
 <!-- TopNavBar -->
 <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto left-1/2 -translate-x-1/2">
-<a class="flex items-center gap-2" href="#top">
-<span class="material-symbols-outlined text-charcoal" data-icon="museum" data-weight="fill" style="font-variation-settings: 'FILL' 1;">museum</span>
-<span class="font-headline-md text-headline-md font-bold text-charcoal">AR Museum</span>
+<a class="flex items-center gap-2 min-w-0 shrink" href="#top">
+<span class="material-symbols-outlined text-charcoal shrink-0" data-icon="museum" data-weight="fill" style="font-variation-settings: 'FILL' 1;">museum</span>
+<span class="font-headline-md text-lg sm:text-headline-md font-bold text-charcoal whitespace-nowrap">AR Museum</span>
 </a>
-<div class="flex gap-4 items-center">
+<div class="flex gap-4 items-center shrink-0">
 <!-- GitHub is hidden on the narrowest screens so the two pills don't overflow the
      bar; it remains reachable from the Tech Stack section and the footer. -->
 <a class="hidden sm:inline-flex font-label-md text-label-md text-charcoal border border-gray-200 px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors" href="https://github.com/Tupochere/mtengatenga-landing-page" target="_blank" rel="noreferrer">GitHub</a>
-<a class="font-label-md text-label-md bg-terracotta text-white px-4 sm:px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap" href="https://github.com/Tupochere/Museum-App-UI/releases/latest/download/mtengatenga-ar.apk">Download APK</a>
+<a class="font-label-md text-label-md bg-terracotta text-white px-4 sm:px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-sm whitespace-nowrap" href="https://github.com/Tupochere/Museum-App-UI/releases/latest/download/mtengatenga-ar.apk"><span class="sm:hidden">Get APK</span><span class="hidden sm:inline">Download APK</span></a>
 </div>
 </nav>
 <!-- Main Content -->
