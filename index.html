@@ -7,13 +7,13 @@
 <meta name="description" content="Scan real museum artifacts with your Android phone to unlock AR stories, 3D models, and an AI guide. A student demo project preserving Malawi's cultural heritage."/>
 
 <!-- Open Graph — controls the preview card when this link is shared on LinkedIn,
-     WhatsApp, etc. NOTE: LinkedIn and most scrapers require an ABSOLUTE og:image
-     URL. Once the Vercel domain is known, change og:image (and add og:url) to the
-     full https:// address, otherwise the share card will render without an image. -->
+     WhatsApp, etc. LinkedIn and most scrapers require ABSOLUTE og:image / og:url
+     values, so these point at the full https:// Vercel address. -->
 <meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mtengatenga-landing-page.vercel.app/"/>
 <meta property="og:title" content="Mtengatenga Museum AR Experience"/>
 <meta property="og:description" content="Scan real museum artifacts with your Android phone to unlock AR stories, 3D models, and an AI guide."/>
-<meta property="og:image" content="assets/mock-2.png"/>
+<meta property="og:image" content="https://mtengatenga-landing-page.vercel.app/assets/mock-2.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
@@ -23,6 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="dist/styles.css" rel="stylesheet"/>
+okay 
 </head>
 <body class="antialiased min-h-screen flex flex-col font-body-md">
 <!-- TopNavBar -->
@@ -329,7 +330,7 @@
   var ADMIN_PORTAL_URL = 'https://museum-admin-dashboard.vercel.app/';
 
   /** Full https:// URL of your LinkedIn profile. */
-  var LINKEDIN_URL = 'https://www.linkedin.com/in/tupo-mitole';
+  var LINKEDIN_URL = null;
 
   // --- Demo video: click-to-load facade ---------------------------------------
   // Loading the YouTube player eagerly costs ~1MB before anyone presses play, so
